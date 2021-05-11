@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Java Book</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav class="navbar mb-5 navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="home.html"><b class="javabook">Java</b> Book</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+      </ul>
+      <div class="d-flex">
+        <img class="profile-pic-icon mt-2" src="images/edema.jpeg" alt="">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+         <a class="nav-link active" aria-current="page" href="#">Edema</a>
+       </li>
+       <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">
+            <img class="create-post-icon" src="images/iconfinder_plus_4115237.png" alt=""></a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" aria-current="page" href="../templates/index.html">Logout</a>
+     </li>
+
+     </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-4">
+         <div class="shadow p-3 mb-5 bg-body rounded text-center">
+            <img class="profile-pic-icon-three mt-4" src="images/edema.jpeg" alt="">
+            <form class="form-group">
+              <input class="custom-file-input mt-4" type="file" name="photo" value="photo" placeholder="photo">
+            </form>
+            <h5 class="mt-4">Edema 🚀 (_Lucid)</h5>
+            <p>
+              a different kind of human | Software Engineer #Decadev #Java @DecagonIns
+              Available for freelance jobs #WordPress #Java<p>
+            <p><img class="profile-info" src="images/iconfinder_location_172496.png" alt=""><b>Lagos, Nigeria</b></p>
+            <p><img class="profile-info" src="images/iconfinder_link_227581.png" alt=""><a href="#">fiverr.com/webify20</a></p>
+            <p><img class="profile-info" src="images/iconfinder_calender_2944882.png" alt="">Born September 17</p>
+            <p><img class="profile-info" src="images/iconfinder_user-alt_285645.png" alt=""> Joined May 2020</p>
+         </div>
+    </div>
+    <div class="col-lg-8">
+       <h4 class="mb-4">Edit Profile</h4>
+      <div class="shadow p-3 mb-5 bg-body rounded">
+        <form class="" action="../templates/index.html" method="post">
+          <input class="form-control mb-3" type="text" name="" value="" placeholder="Edema 🚀 (_Lucid)">
+          <input class="form-control mb-3" type="text" name="" value="" placeholder="edemaero@gmail.com" readonly>
+          <div class="row mt-3">
+            <p class="mt-2">Date of birth</p>
+            <div class="col-lg-4">
+
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Day</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="17" selected>17</option>
+
+              </select>
+            </div>
+            <div class="col-lg-4">
+
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Month</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9" selected>September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+            </div>
+            <div class="col-lg-4">
+
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Year</option>
+                <option value="1" selected>2021</option>
+                <option value="2">2020</option>
+                <option value="3">2019</option>
+                <option value="4">2018</option>
+
+              </select>
+            </div>
+          </div>
+         <p class="mt-4">Gender</p>
+         <div class="row">
+
+           <div class="col-lg-6">
+             <div class="form-check">
+               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+               <label class="form-check-label" for="flexRadioDefault1">
+                 Male
+               </label>
+             </div>
+           </div>
+           <div class="col-lg-6">
+             <div class="form-check">
+               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+               <label class="form-check-label" for="flexRadioDefault2">
+                 Female
+               </label>
+             </div>
+           </div>
+
+         </div>
+         <p class="mt-4">Bio</p>
+         <textarea class="form-control drag" placeholder="Say something about you @Edema"></textarea>
+         <input class="form-control mb-3 mt-4" type="url" name="" value="" placeholder="Website">
+
+          <div class="d-grid gap-2 mt-3">
+          <a href="#" class="btn btn-green btn-lg">Update</a>
+
+          </div>
+        </form>
+        </div>
+
+    </div>
+  </div>
+  </div>
+  <footer class="text-center mt-5 mb-5">Java Book - 2021</footer>
+  <script type="text/javascript">
+
+  function removesection_one(){
+     document.getElementById('section-one').remove();
+  }
+  function removesection_two(){
+     document.getElementById('section-two').remove();
+  }
+  function removesection_three(){
+     document.getElementById('section-three').remove();
+  }
+    </script>
+  </body>
+</html>
