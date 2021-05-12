@@ -99,27 +99,53 @@
         </div>
         <div class="row">
           <div class="col-lg-3">
-            <form th:href="@{/comment.html}" method="Post">
-              <input type="hidden" name="message" th:field="*{posts}">
-              <input type="hidden" name="post_id" th:field="*{thisUser}">
-              <button type="submit" value="" class="btn btn-success btn-sm button">Comment </button>
-            </form>
+            <a th:href="@{/comment/{postId}(postId=${posts.getPostID()})}" class="btn btn-success btn-sm button">comment</a>
+<!--            <form th:href="@{/comment}" method=post>-->
+<!--              <input type="hidden" name="message" th:value="*{posts.getPostID()}">-->
+<!--              <input type="hidden" name="user_id" th:value="*{posts.getUser().getFirstName()}">-->
+<!--              <button type="submit" value="" class="btn btn-success btn-sm button">Comment </button>-->
+<!--            </form>-->
           </div>
           <div class="col-lg-3">
-            <form action="${pageContext.request.contextPath}/editPost.jsp" method="Post">
-              <input type="hidden" name="message" value="">
-              <input type="hidden" name="post_id" value="">
-              <button type="submit" value="" class="btn btn-success btn-sm button">Edit </button>
-            </form>
-          </div>
-          <div class="col-lg-3">
-            <form action="/like" method="POST">
-              <input type="hidden" name="post_id" value="">
-              <button type="submit" value="" class="btn btn-success btn-sm button">Like</button>
+            <form th:action="@{/like/{id}(id=${posts.getPostID()})}" method="post" th:object="${newPostlike}">
+              <button type="submit" value="" class="btn btn-success btn-sm button" th:text="${posts.getLikes().size() + ' Like'}"></button>
             </form>
           </div>
           <div class="col-lg-3" style="color: #fff;">
-            <span class="btn btn-danger">Delete</span>
+            <form th:action="@{/delete/{id}(id=${posts.getPostID()})}" method="post" th:object="${postdelete}">
+<!--              <input type="hidden" name="post_id" value="">-->
+              <button type="submit" value="" class="btn btn-success btn-sm button" >Delete</button>
+            </form>
+          </div>
+          <div class="row">
+            <div class="col s1">
+            </div>
+            <form class="col s10" method="post" th:object="${newComment}" th:action="@{/comment/{id}(id=${posts.getPostID()})}">
+              <div class="row">
+                <div class="input-field col s8">
+                  <textarea id="icon_prefix" placeholder="Comment..." class="materialize-textarea" th:field="*{comment}"></textarea>
+                  <label for="icon_prefix"></label>
+                </div>
+                <button class="btn waves-effect waves-light blue-violet accent-3" type="submit" name="action">Comment
+                  <i class="material-icons right"></i>
+                </button>
+
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-3">
+            <form th:action="@{/edit/{id}(id=${posts.getPostID()})}" method="post" th:object="${postUpdate}" >
+              <div class="row">
+                <div class="input-field col s8">
+                  <textarea id="icon_prefix3" placeholder="Edit post..." class="materialize-textarea" th:field="*{message}"></textarea>
+                  <label for="icon_prefix3"></label>
+                </div>
+                <button class="btn waves-effect waves-light blue-violet accent-3" type="submit" name="action">Edit
+                  <i class="material-icons right"></i>
+                </button>
+
+              </div>
+            </form>
           </div>
         </div>
       </div>

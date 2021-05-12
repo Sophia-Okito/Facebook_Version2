@@ -1,7 +1,10 @@
 package com.sophia.facebook_version2.controller;
 
+import com.sophia.facebook_version2.model.Comment;
 import com.sophia.facebook_version2.model.Post;
+import com.sophia.facebook_version2.model.PostLike;
 import com.sophia.facebook_version2.model.User;
+import com.sophia.facebook_version2.service.PostLikeService;
 import com.sophia.facebook_version2.service.PostService;
 import com.sophia.facebook_version2.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 public class LoginController {
@@ -19,6 +23,9 @@ public class LoginController {
 
     @Autowired
     PostService postService;
+
+    @Autowired
+    PostLikeService postLikeService;
 
     @GetMapping("/login")
     public String getLoginPage(Model model){
@@ -49,8 +56,14 @@ public class LoginController {
     public  String getHomePage(Model model, HttpSession httpSession){
         User user = (User)httpSession.getAttribute("user");
         model.addAttribute("newPost", new Post());
+        model.addAttribute("postdelete", new Post());
+        model.addAttribute("newPostlike", new PostLike());
+        model.addAttribute("postUpdate", new Post());
         model.addAttribute("thisUser", user);
         model.addAttribute("allPosts", postService.findAllPost());
+        model.addAttribute("newComment", new Comment());
+//        model.addAttribute("postlike", postLikeService.getAllLikeOfPost())
+
         return "home";
     }
 
